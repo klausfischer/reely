@@ -1,0 +1,27 @@
+{
+  "name": "reely",
+  "version": "0.1.0",
+  "description": "a lightweight 360° slider for showcasing products",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "slider",
+    "carousel",
+    "reel",
+    "360",
+    "rotator"
+  ],
+  "bugs": {
+    "url": "https://github.com/klausfischer/reely/issues"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie >= 11"
+  ],
+  "homepage": "https://github.com/klausfischer/reely",
+  "author": "Klaus Fischer <klaus@supersimple.at> (http://www.supersimple.at)",
+  "license": "MIT"
+}
