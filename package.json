@@ -2,9 +2,10 @@
   "name": "reely",
   "version": "0.1.0",
   "description": "a lightweight 360° slider for showcasing products",
-  "main": "index.js",
+  "main": "dist/reely.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && webpack"
   },
   "keywords": [
     "slider",
@@ -16,6 +17,10 @@
   "bugs": {
     "url": "https://github.com/klausfischer/reely/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klausfischer/reely.git"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -23,5 +28,13 @@
   ],
   "homepage": "https://github.com/klausfischer/reely",
   "author": "Klaus Fischer <klaus@supersimple.at> (http://www.supersimple.at)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/preset-env": "^7.0.0-beta.37",
+    "babel-loader": "^8.0.0-beta.0",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.0.0-alpha.4",
+    "webpack-cli": "^2.0.2"
+  }
 }
