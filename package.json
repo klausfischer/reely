@@ -1,6 +1,6 @@
 {
   "name": "reely",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a lightweight 360° slider for showcasing products",
   "main": "dist/reely.js",
   "scripts": {
