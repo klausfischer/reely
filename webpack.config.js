@@ -7,7 +7,9 @@ const config = (env) => ({
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'umd',
+    libraryExport: 'default',
+    library: 'reely'
   },
   module: {
     rules: [
@@ -26,4 +28,4 @@ const config = (env) => ({
   mode: 'production',
 });
 
-module.exports = config;
+module.exports = config

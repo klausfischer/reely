@@ -2,7 +2,7 @@ const reely = (element, opts) => {
 
   const options = Object.assign({
     imageArray: [],
-    sensitivity: 35,
+    sensitivity: 10,
     drag: true,
     auto: false,
     edgeStop: false,
@@ -10,32 +10,32 @@ const reely = (element, opts) => {
 
   const container = element;
   const image = container.querySelector('img');
-  const oldX = 0;
-  const oldDiff = null;
-  const lastMove = 'none';
-  const lastMoveConstant = 'none';
-  const previousX = 0;
-  const i = 0;
   const iAuto = 0;
   const sensitivity = options.sensitivity;
   const autoplaySpeed = options.autoplaySpeed;
   const mobileRate = options.sensitivity / 3;
   const images = options.imageArray;
   const preloadImages = [];
-  const timer = null;
+  let timer = null;
+  let oldX = 0;
+  let oldDiff = null;
+  let lastMove = 'none';
+  let lastMoveConstant = 'none';
+  let previousX = 0;
+  let i = 0;
   const touchOnThis = false;
 
   const init = () => {
-    if (settings.auto === true) {
+    if (options.auto === true) {
       auto(sensitivity);
     } else {
       // Test for smartphone browser.
       // Source : http://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-handheld-device-in-jquery
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         touchIsMoving();
-      } else if (settings.drag === true ){
+      } else if (options.drag === true ){
         drag();
-      } else if (settings.drag === false) {
+      } else if (options.drag === false) {
         mouseIsMoving();
       }
     }
@@ -199,7 +199,7 @@ const reely = (element, opts) => {
       }
 
       if(i >= images.length) {
-        if (!settings.edgeStop) {
+        if (!options.edgeStop) {
           i = 0;
         } else {
           i = images.length - 1;
@@ -209,7 +209,7 @@ const reely = (element, opts) => {
       image.setAttribute('src', images[i]);
 
       if (i >= images.length) {
-        if (!settings.edgeStop) {
+        if (!options.edgeStop) {
           i = 0;
         } else {
           i = images.length - 1;
@@ -230,7 +230,7 @@ const reely = (element, opts) => {
       }
 
       if(i <= 0) {
-        if (!settings.edgeStop) {
+        if (!options.edgeStop) {
           i = images.length - 1;
         } else {
           i = 0;
@@ -240,7 +240,7 @@ const reely = (element, opts) => {
       image.setAttribute('src', images[i]);
 
       if (i <= 0) {
-        if (!settings.edgeStop) {
+        if (!options.edgeStop) {
           i = images.length - 1;
         } else {
           i = 0;
