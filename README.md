@@ -30,9 +30,13 @@ const images = [
   'images/0002.jpg'
 ];
 
-const slider = reely({
+const container = document.querySelector('.reely');
+
+const slider = reely(container, {
   imageArray: images,
 });
+
+slider.init();
 ```
 
 ## Options
@@ -40,7 +44,6 @@ At initialization reely accepts multiple options:
 
 | Property Name | Type | Default | Description |
 |---------------|------|---------|-------------|
-| container | `string` or `HTMLElement` | `'.reely'` | Container where reely will be attached to
 | sensitivity | `number` | `35` | The lower the number, the more sensitive the rotator will be. The number value represents distance in pixels between each frame change.|
 | drag | `boolean` | `true` | Determines if the rotator is draggable. If set to false, image will rotate on any mouse movement along the X axis of the page. |
 | auto | `boolean` | `false` | Determines if rotator should spin by itself. Default is set to false. If set to true, rotator will spin and user interaction will be disabled. |
