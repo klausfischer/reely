@@ -23,7 +23,7 @@ const reely = (element, opts) => {
   let lastMoveConstant = 'none';
   let previousX = 0;
   let i = 0;
-  const touchOnThis = false;
+  let touchOnThis = false;
 
   const init = () => {
     if (options.auto === true) {
@@ -120,29 +120,29 @@ const reely = (element, opts) => {
     let xcoord;
 
     const update = function() {
-      if (!_.touchOnThis) {
+      if (!touchOnThis) {
         return;
       }
-      _.changeLogic(xcoord, deviceRate);
+      changeLogic(xcoord, deviceRate);
       requestAnimationFrame(update);
     }
 
-    _.container.addEventListener('touchstart', (e) => {
+    container.addEventListener('touchstart', (e) => {
       xcoord = e.pageX || e.touches[0].pageX;
-      _.touchOnThis = true;
+      touchOnThis = true;
       requestAnimationFrame(update);
     });
 
     window.addEventListener('touchmove', (e) => {
       xcoord = e.pageX || e.touches[0].pageX;
 
-      if (_.touchOnThis) {
-        _.changeLogic(xcoord, deviceRate);
+      if (touchOnThis) {
+        changeLogic(xcoord, deviceRate);
       }
     });
 
     window.addEventListener('touchend', (e) => {
-      _.touchOnThis = false;
+      touchOnThis = false;
     });
   }
 
