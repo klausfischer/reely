@@ -1,6 +1,6 @@
 const path = require('path');
 
-const config = env => ({
+const config = () => ({
   entry: {
     reely: './src/reely.js',
   },
