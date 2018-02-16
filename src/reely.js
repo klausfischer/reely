@@ -182,21 +182,18 @@ const reely = (element, opts) => {
     document.ondragstart = () => false;
 
     image.addEventListener('mousedown', (e) => {
-      e.preventDefault();
       if (!dragging) {
         dragging = true;
       }
     });
 
     document.querySelector('body').addEventListener('mousemove', (e) => {
-      e.preventDefault();
       if (dragging) {
         changeLogic(e.clientX, sensitivity);
       }
     });
 
     document.querySelector('body').addEventListener('mouseup', (e) => {
-      e.preventDefault();
       if (dragging) {
         dragging = false;
       }

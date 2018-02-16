@@ -10,7 +10,7 @@
 </head>
 <body>
   <div id="reel" style="max-width: 300px; margin: 0 auto;">
-    <img src="images/0001.png" alt="petrol 3D Cube">
+    <img src="./images/0001.png" alt="petrol 3D Cube">
   </div>
 
   <script>
@@ -21,7 +21,7 @@
       // build array of all images
       for (let i = 1; i <= 30; i++) {
         const index = (i < 10) ? '000' + i : '00' + i;
-        images.push('images/' + index + '.png');
+        images.push('./images/' + index + '.png');
       }
 
       const r = reely(container, {
