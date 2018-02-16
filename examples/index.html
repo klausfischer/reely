@@ -16,9 +16,9 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const container = document.querySelector('#reel');
-
       const images = [];
 
+      // build array of all images
       for (let i = 1; i <= 30; i++) {
         const index = (i < 10) ? '000' + i : '00' + i;
         images.push('images/' + index + '.png');
@@ -28,13 +28,18 @@
         imageArray: images
       });
 
-      container.addEventListener('slideChanged', (e) => {
+      r.init();
 
+      // Track slide changes
+      container.addEventListener('slideChanged', (e) => {
         console.log(`current slide: ${e.detail.currentSlide}`);
       });
 
-      r.init();
-
+      // Manipulate current slide
+      //setTimeout(() => {
+      //  console.log('tried to slideTo');
+      //  r.slideTo(14);
+      //}, 2000);
 
     });
   </script>

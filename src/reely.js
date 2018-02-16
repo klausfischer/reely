@@ -13,6 +13,7 @@ const reely = (element, opts) => {
   const mobileRate = options.sensitivity / 3;
   const images = options.imageArray;
   const preloadImages = [];
+  const errorPrefix = '[reely]';
   let iAuto = 0;
   let oldX = 0;
   let oldDiff = null;
@@ -22,6 +23,10 @@ const reely = (element, opts) => {
   let i = 0;
   let timer;
   let touchOnThis = false;
+
+  const logError = (msg) => {
+    console.error(`${errorPrefix} ${msg}`); // eslint-disable-line no-console
+  };
 
   const rotate = (xcoord) => {
     if (xcoord > oldX) {
@@ -238,6 +243,18 @@ const reely = (element, opts) => {
     });
   };
 
+  const slideTo = (slideNumber) => {
+    if (slideNumber >= 0 && slideNumber < images.length) {
+      i = slideNumber;
+      lastMove = 'none';
+      lastMoveConstant = 'none';
+      image.setAttribute('src', images[i]);
+      return true;
+    }
+
+    logError('Your desired slide number is smaller than 0 or bigger than the total slide amount');
+  };
+
   const init = () => {
     if (options.auto === true) {
       auto(sensitivity);
@@ -258,6 +275,7 @@ const reely = (element, opts) => {
 
   return {
     init,
+    slideTo,
   };
 };
 

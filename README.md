@@ -39,6 +39,13 @@ const slider = reely(container, {
 slider.init();
 ```
 
+## API
+
+| Method | Arguments | Description |
+|--------|-----------|-------------|
+| init | options | Initializes reely with [options](#options) |
+| slideTo | slideNumber | Slides `slideNumber` |
+
 ## Options
 At initialization reely accepts multiple options:
 
@@ -49,11 +56,13 @@ At initialization reely accepts multiple options:
 | auto | `boolean` | `false` | Determines if rotator should spin by itself. Default is set to false. If set to true, rotator will spin and user interaction will be disabled. |
 | edgeStop | `boolean` | `false`  | Determines if the rotator should keep on rotating when the first or last image is reached. |
 
+
 ## Events
 
 | Event Name | Description |
 |------------|-------------|
 | slideChanged | Emits after the current slide has changed. Carries `e.detail.currentSlide` (see `/examples` folder) |
+
 
 ## Contribution
 
