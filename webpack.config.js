@@ -1,15 +1,15 @@
 const path = require('path');
 
-const config = (env) => ({
+const config = env => ({
   entry: {
-    reely: './src/reely.js'
+    reely: './src/reely.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
     libraryTarget: 'umd',
     libraryExport: 'default',
-    library: 'reely'
+    library: 'reely',
   },
   module: {
     rules: [
@@ -19,13 +19,13 @@ const config = (env) => ({
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
-    ]
+    ],
   },
   mode: 'production',
 });
 
-module.exports = config
+module.exports = config;
