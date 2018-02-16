@@ -87,6 +87,15 @@ const reely = (element, opts) => {
 
     // Record the last x position for use when the method is called again.
     oldX = xcoord;
+
+    // Dispatch slideChange event
+    const ev = new CustomEvent('slideChanged', {
+      detail: {
+        currentSlide: i,
+      },
+    });
+
+    container.dispatchEvent(ev);
   };
 
   const changeLogic = (xcoord, deviceRate) => {

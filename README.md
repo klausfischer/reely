@@ -51,7 +51,9 @@ At initialization reely accepts multiple options:
 
 ## Events
 
-Coming up ...
+| Event Name | Description |
+|------------|-------------|
+| slideChanged | Emits after the current slide has changed. Carries `e.detail.currentSlide` (see `/examples` folder) |
 
 ## Contribution
 

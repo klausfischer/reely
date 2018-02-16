@@ -27,7 +27,15 @@
       const r = reely(container, {
         imageArray: images
       });
+
+      container.addEventListener('slideChanged', (e) => {
+
+        console.log(`current slide: ${e.detail.currentSlide}`);
+      });
+
       r.init();
+
+
     });
   </script>
 </body>
