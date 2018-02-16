@@ -242,14 +242,14 @@ const reely = (element, opts) => {
 
   const slideTo = (slideNumber) => {
     if (slideNumber >= 0 && slideNumber < images.length) {
-      i = slideNumber;
+      i = parseInt(slideNumber, 10);
       lastMove = 'none';
       lastMoveConstant = 'none';
       image.setAttribute('src', images[i]);
       return true;
     }
-
     logError('Your desired slide number is smaller than 0 or bigger than the total slide amount');
+    return false;
   };
 
   const init = () => {
